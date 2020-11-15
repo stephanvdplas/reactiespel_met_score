@@ -4,17 +4,8 @@ input.onPinPressed(TouchPin.P0, function () {
     Verschenen = 0
     basic.showString("3 2 1 ")
     basic.pause(randint(1000 * WachtMin, 1000 * WachtMax))
-    if (randint(1, 4) == 4) {
-        Vals_figuur = 1
-    } else {
-        Vals_figuur = 0
-    }
     if (P1_aangeraakt == 0 && P2_aangeraakt == 0) {
-        if (Vals_figuur == 0) {
-            basic.showIcon(IconNames.SmallDiamond)
-        } else {
-            basic.showIcon(IconNames.SmallSquare)
-        }
+        basic.showIcon(IconNames.SmallDiamond)
         Verschenen = 1
     }
 })
@@ -22,14 +13,8 @@ input.onPinPressed(TouchPin.P2, function () {
     P2_aangeraakt = 1
     if (P1_aangeraakt == 0) {
         if (Verschenen == 1) {
-            if (Vals_figuur == 0) {
-                basic.showArrow(ArrowNames.NorthEast)
-                P2_score += 1
-            } else {
-                basic.showArrow(ArrowNames.SouthEast)
-                basic.showIcon(IconNames.SmallDiamond)
-                P2_score += -1
-            }
+            basic.showArrow(ArrowNames.NorthEast)
+            P2_score += 1
         } else {
             basic.showArrow(ArrowNames.SouthEast)
             P2_score += -1
@@ -48,14 +33,8 @@ input.onPinPressed(TouchPin.P1, function () {
     P1_aangeraakt = 1
     if (P2_aangeraakt == 0) {
         if (Verschenen == 1) {
-            if (Vals_figuur == 0) {
-                basic.showArrow(ArrowNames.NorthWest)
-                P1_score += 1
-            } else {
-                basic.showArrow(ArrowNames.SouthWest)
-                basic.showIcon(IconNames.SmallDiamond)
-                P1_score += -1
-            }
+            basic.showArrow(ArrowNames.NorthWest)
+            P1_score += 1
         } else {
             basic.showArrow(ArrowNames.SouthWest)
             P1_score += -1
@@ -70,7 +49,6 @@ input.onPinPressed(TouchPin.P1, function () {
         }
     }
 })
-let Vals_figuur = 0
 let Verschenen = 0
 let P2_aangeraakt = 0
 let P1_aangeraakt = 0
