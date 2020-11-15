@@ -1,5 +1,4 @@
 input.onPinPressed(TouchPin.P0, function () {
-    Vals_figuur = 0
     P1_aangeraakt = 0
     P2_aangeraakt = 0
     Verschenen = 0
@@ -51,7 +50,6 @@ input.onPinPressed(TouchPin.P1, function () {
 let Verschenen = 0
 let P2_aangeraakt = 0
 let P1_aangeraakt = 0
-let Vals_figuur = 0
 let P2_score = 0
 let P1_score = 0
 let WachtMax = 0
